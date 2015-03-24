@@ -25,3 +25,9 @@ def index():
     return render_template('index.html',
                            form=form, name=session.get('name'),
                            known=session.get('known', False))
+
+
+@main.route('/secret')
+@login_required
+def secret():
+    return 'Only authenticated users are allowed!'
